@@ -8,6 +8,9 @@ const imageProduct = document.querySelector('.js-image-product');
 const nextButton = document.querySelector('.js-next-button');
 const prevButton = document.querySelector('.js-prev-button');
 
+const addProduct = document.querySelector('.js-add');
+const removeProduct = document.querySelector('.js-remove');
+
 const opacity = document.querySelector('.js-opacity');
 let currentImg = 0;
 const images = [
@@ -16,6 +19,8 @@ const images = [
   { url: './assets/images/image-product-3.jpg', alt: 'Product 3' },
   { url: './assets/images/image-product-4.jpg', alt: 'Product 4' },
 ];
+
+let quantity = 0;
 
 function handleCollapseHamburgerMenu() {
   hamburgerMenu.classList.remove('collapse');
@@ -52,9 +57,27 @@ function renderImg() {
   imageProduct.alt = images[currentImg].alt;
 }
 
+function addProductCart() {
+  quantity++;
+  renderCart();
+}
+
+function renderCart() {
+  document.querySelector('.js-quantity').value = quantity;
+}
+
+function removeProductCart() {
+  if (quantity > 0) {
+    quantity--;
+  }
+  renderCart();
+}
+
 renderImg();
 
 hamburgerMenubutton.addEventListener('click', handleCollapseHamburgerMenu);
 closeMenu.addEventListener('click', handleCloseHamburgerMenu);
 nextButton.addEventListener('click', nextSlideShow);
 prevButton.addEventListener('click', prevSlideShow);
+addProduct.addEventListener('click', addProductCart);
+removeProduct.addEventListener('click', removeProductCart);

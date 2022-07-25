@@ -1,5 +1,5 @@
 <main class="main">
-  <div class="main__product_container">
+  <div class="main__product_image_container">
     <div class="main__image_controls">
       <div class="js-prev-button main__image_controls--button">
         <img src="./assets/images/icon-previous.svg" alt="Prev" />
@@ -9,5 +9,40 @@
       </div>
     </div>
     <img class="js-image-product main__image_product" src="" alt="" />
+  </div>
+  <div class="main__product_info_container">
+    <h6 class="main__subtitle">Sneaker company</h6>
+    <h2 class="main__title">Fall Limited Edition Sneakers</h2>
+    <p class="main__text">
+      These low-profile sneakers are your perfect casual wear companion.
+      Featuring a durable rubber outer sole, they'll withstand everything the
+      weather can offer.
+    </p>
+    <div class="prices">
+      <div class="prices__left">
+        <h2 class="prices__left--now">$125.00</h2>
+        <p class="prices__left--discount">50%</p>
+      </div>
+      <p class="prices__right">$250.00</p>
+    </div>
+    <div class="counter">
+      <img
+        class="js-remove"
+        src="./assets/images/icon-minus.svg"
+        alt="Remove"
+      />
+      <input
+        class="counter__input js-quantity"
+        type="number"
+        name="quantity"
+        id="quantity"
+        value="0"
+        readonly
+      />
+      <img class="js-add" src="./assets/images/icon-plus.svg" alt="Add" />
+    </div>
+    <button class="main__button">
+      <img src="./assets/images/icon-cart.svg" alt="Cart" /> Add to cart
+    </button>
   </div>
 </main>
