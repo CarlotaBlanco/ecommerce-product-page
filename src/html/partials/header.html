@@ -1,22 +1,27 @@
 <header class="header">
   <div class="header__left-elements">
     <img
-      class="header__left-elements--hamburger"
+      class="js-hamburger-menu header__left-elements--hamburger"
       src="./assets/images/icon-menu.svg"
       alt="Menu"
     />
-    <div class="hamburger-menu collapse">
+    <div class="js-hamburger-menu-container collapse hamburger-menu-container">
       <nav>
-        <img src="./assets/images/icon-close.svg" alt="Close" />
-        <ul>
-          <li>Collections</li>
-          <li>Men</li>
-          <li>Women</li>
-          <li>About</li>
-          <li>Contact</li>
+        <img
+          class="js-close-menu"
+          src="./assets/images/icon-close.svg"
+          alt="Close"
+        />
+        <ul class="hamburger-menu">
+          <li class="hamburger-menu__item">Collections</li>
+          <li class="hamburger-menu__item">Men</li>
+          <li class="hamburger-menu__item">Women</li>
+          <li class="hamburger-menu__item">About</li>
+          <li class="hamburger-menu__item">Contact</li>
         </ul>
       </nav>
     </div>
+    <div class="js-opacity"></div>
     <img class="" src="./assets/images/logo.svg" alt="Sneakers Logo" />
   </div>
   <div class="header__right-elements">

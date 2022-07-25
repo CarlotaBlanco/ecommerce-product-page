@@ -1,5 +1,5 @@
 $white: hsl(0, 0%, 100%);
-
+$black-opacity: hsla(0, 0%, 0%, 0.75);
 .header {
   display: flex;
   justify-content: space-between;
@@ -14,6 +14,24 @@ $white: hsl(0, 0%, 100%);
     &--hamburger {
       width: 16px;
       height: 16px;
+    }
+    .hamburger-menu-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60%;
+      height: 100vh;
+      background-color: $white;
+      z-index: 99;
+      padding: 1.25em;
+      .hamburger-menu {
+        padding: 20% 0;
+        list-style: none;
+        &__item {
+          padding: 7% 0;
+          font-weight: 700;
+        }
+      }
     }
   }
   &__right-elements {
@@ -34,4 +52,14 @@ $white: hsl(0, 0%, 100%);
 
 .collapse {
   display: none;
+}
+
+.opacity {
+  width: 100vw;
+  height: 100vh;
+  background-color: $black-opacity;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
