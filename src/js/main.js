@@ -4,7 +4,18 @@ const hamburgerMenubutton = document.querySelector('.js-hamburger-menu');
 const hamburgerMenu = document.querySelector('.js-hamburger-menu-container');
 const closeMenu = document.querySelector('.js-close-menu');
 
+const imageProduct = document.querySelector('.js-image-product');
+const nextButton = document.querySelector('.js-next-button');
+const prevButton = document.querySelector('.js-prev-button');
+
 const opacity = document.querySelector('.js-opacity');
+let currentImg = 0;
+const images = [
+  { url: './assets/images/image-product-1.jpg', alt: 'Product 1' },
+  { url: './assets/images/image-product-2.jpg', alt: 'Product 2' },
+  { url: './assets/images/image-product-3.jpg', alt: 'Product 3' },
+  { url: './assets/images/image-product-4.jpg', alt: 'Product 4' },
+];
 
 function handleCollapseHamburgerMenu() {
   hamburgerMenu.classList.remove('collapse');
@@ -16,5 +27,34 @@ function handleCloseHamburgerMenu() {
   opacity.classList.remove('opacity');
 }
 
+function nextSlideShow() {
+  if (currentImg < images.length - 1) {
+    currentImg += 1;
+  } else {
+    currentImg = 0;
+  }
+
+  renderImg();
+}
+
+function prevSlideShow() {
+  if (currentImg === 0) {
+    currentImg = images.length - 1;
+  } else {
+    currentImg -= 1;
+  }
+
+  renderImg();
+}
+
+function renderImg() {
+  imageProduct.src = images[currentImg].url;
+  imageProduct.alt = images[currentImg].alt;
+}
+
+renderImg();
+
 hamburgerMenubutton.addEventListener('click', handleCollapseHamburgerMenu);
 closeMenu.addEventListener('click', handleCloseHamburgerMenu);
+nextButton.addEventListener('click', nextSlideShow);
+prevButton.addEventListener('click', prevSlideShow);
