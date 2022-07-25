@@ -11,6 +11,9 @@ const prevButton = document.querySelector('.js-prev-button');
 const addProduct = document.querySelector('.js-add');
 const removeProduct = document.querySelector('.js-remove');
 
+const addCartButton = document.querySelector('.js-add-cart-button');
+const cardQuantity = document.querySelector('.js-cart-quantity');
+
 const opacity = document.querySelector('.js-opacity');
 let currentImg = 0;
 const images = [
@@ -72,7 +75,14 @@ function removeProductCart() {
   }
   renderCart();
 }
-
+function submitToCart() {
+  if (quantity > 0) {
+    cardQuantity.classList.add('header__right-elements--quantity');
+    cardQuantity.innerHTML = quantity;
+  } else {
+    alert('Error! Empty Cart!');
+  }
+}
 renderImg();
 
 hamburgerMenubutton.addEventListener('click', handleCollapseHamburgerMenu);
@@ -81,3 +91,4 @@ nextButton.addEventListener('click', nextSlideShow);
 prevButton.addEventListener('click', prevSlideShow);
 addProduct.addEventListener('click', addProductCart);
 removeProduct.addEventListener('click', removeProductCart);
+addCartButton.addEventListener('click', submitToCart);

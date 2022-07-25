@@ -1,11 +1,13 @@
 $white: hsl(0, 0%, 100%);
 $black-opacity: hsla(0, 0%, 0%, 0.75);
+$orange: hsl(26, 100%, 55%);
 .header {
   display: flex;
   justify-content: space-between;
   height: 10vh;
   background-color: $white;
   padding: 1.2rem;
+
   &__left-elements {
     width: 50%;
     display: flex;
@@ -39,6 +41,17 @@ $black-opacity: hsla(0, 0%, 0%, 0.75);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &--quantity {
+      background-color: $orange;
+      color: $white;
+      padding: 0.25% 1.5%;
+      font-size: 0.7em;
+      border-radius: 10px;
+      position: absolute;
+      z-index: 99;
+      top: 3vh;
+      right: 13vw;
+    }
     &--cart {
       width: 20px;
       height: 20px;
