@@ -79,6 +79,11 @@ $grayish-blue: hsl(220, 14%, 75%);
       z-index: 2;
       top: 3vh;
       right: 13vw;
+      @media all and(min-width:1200px) {
+        padding: 0.15% 0.8%;
+        top: 7vh;
+        right: 17vw;
+      }
     }
     &--cart {
       width: 20px;

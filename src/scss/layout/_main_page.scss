@@ -55,6 +55,9 @@ $light-grayish-blue: hsl(223, 64%, 98%);
         border-radius: 10px;
         width: 100%;
       }
+      &--element:active {
+        border: 1px solid $orange;
+      }
     }
   }
   &__product_info_container {
