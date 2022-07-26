@@ -7,7 +7,7 @@ const imageProduct = document.querySelector('.js-image-product');
 const nextButton = document.querySelector('.js-next-button');
 const prevButton = document.querySelector('.js-prev-button');
 const changeThumb = document.querySelector('.js-change-img');
-
+const thumbElement = document.querySelectorAll('.js-thumb-element');
 const addProduct = document.querySelector('.js-add');
 const removeProduct = document.querySelector('.js-remove');
 const addCartButton = document.querySelector('.js-add-cart-button');
@@ -60,6 +60,13 @@ function prevSlideShow() {
 function renderImg() {
   imageProduct.src = images[currentImg].url;
   imageProduct.alt = images[currentImg].alt;
+  for (let element of thumbElement) {
+    if (parseInt(element.id) === currentImg) {
+      element.classList.add('main__image_thumbnails--element_active');
+    } else {
+      element.classList.remove('main__image_thumbnails--element_active');
+    }
+  }
 }
 
 function changeByThumb(event) {
