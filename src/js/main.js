@@ -1,22 +1,15 @@
 'use strict';
 
 const hamburgerMenubutton = document.querySelector('.js-hamburger-menu');
-const hamburgerMenu = document.querySelector('.js-hamburger-menu-container');
 const closeMenu = document.querySelector('.js-close-menu');
-const imageProduct = document.querySelector('.js-image-product');
 const nextButton = document.querySelector('.js-next-button');
 const prevButton = document.querySelector('.js-prev-button');
 const changeThumb = document.querySelector('.js-change-img');
-const thumbElement = document.querySelectorAll('.js-thumb-element');
 const addProduct = document.querySelector('.js-add');
 const removeProduct = document.querySelector('.js-remove');
 const addCartButton = document.querySelector('.js-add-cart-button');
-const cartQuantity = document.querySelector('.js-cart-quantity');
-const cart = document.querySelector('.js-cart');
 const cartButton = document.querySelector('.js-cart-button');
-const product = document.querySelector('.js-product');
-
-const opacity = document.querySelector('.js-opacity');
+let quantity = 0;
 let currentImg = 0;
 const images = [
   { url: './assets/images/image-product-1.jpg', alt: 'Product 1' },
@@ -25,14 +18,16 @@ const images = [
   { url: './assets/images/image-product-4.jpg', alt: 'Product 4' },
 ];
 
-let quantity = 0;
-
 function collapseHamburgerMenu() {
+  const opacity = document.querySelector('.js-opacity');
+  const hamburgerMenu = document.querySelector('.js-hamburger-menu-container');
   hamburgerMenu.classList.remove('collapse');
   opacity.classList.add('opacity');
 }
 
 function closeHamburgerMenu() {
+  const opacity = document.querySelector('.js-opacity');
+  const hamburgerMenu = document.querySelector('.js-hamburger-menu-container');
   hamburgerMenu.classList.add('collapse');
   opacity.classList.remove('opacity');
 }
@@ -58,6 +53,8 @@ function prevSlideShow() {
 }
 
 function renderImg() {
+  const imageProduct = document.querySelector('.js-image-product');
+  const thumbElement = document.querySelectorAll('.js-thumb-element');
   imageProduct.src = images[currentImg].url;
   imageProduct.alt = images[currentImg].alt;
   for (let element of thumbElement) {
@@ -91,6 +88,7 @@ function removeProductCart() {
 }
 
 function cartTag() {
+  const cartQuantity = document.querySelector('.js-cart-quantity');
   if (quantity > 0) {
     cartQuantity.classList.add('header__right-elements--quantity');
     cartQuantity.innerHTML = quantity;
@@ -99,6 +97,8 @@ function cartTag() {
 }
 
 function renderCart() {
+  const product = document.querySelector('.js-product');
+  const cart = document.querySelector('.js-cart');
   cart.classList.toggle('collapse');
   if (quantity > 0) {
     let html = '';
@@ -129,6 +129,8 @@ function addEventClear() {
 }
 
 function clearCart() {
+  const cart = document.querySelector('.js-cart');
+  const cartQuantity = document.querySelector('.js-cart-quantity');
   quantity = 0;
   cartQuantity.classList.remove('header__right-elements--quantity');
   cartQuantity.innerHTML = '';
