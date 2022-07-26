@@ -6,6 +6,12 @@ $dark-grayish-blue: hsl(219, 9%, 45%);
 $grayish-blue: hsl(220, 14%, 75%);
 $light-grayish-blue: hsl(223, 64%, 98%);
 .main {
+  &__product_image_container {
+    @media all and(min-width:1200px) {
+      width: 50%;
+      padding: 2em;
+    }
+  }
   &__image_controls {
     width: 100%;
     display: flex;
@@ -22,6 +28,9 @@ $light-grayish-blue: hsl(223, 64%, 98%);
       display: flex;
       align-items: center;
       justify-content: center;
+      @media all and(min-width:1200px) {
+        display: none;
+      }
     }
   }
   &__image_product {
@@ -30,11 +39,33 @@ $light-grayish-blue: hsl(223, 64%, 98%);
     top: 10vh;
     left: 0;
     z-index: 0;
+    @media all and(min-width:1200px) {
+      position: static;
+      border-radius: 20px;
+    }
+  }
+  &__image_thumbnails {
+    display: none;
+    @media all and(min-width:1200px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 2em;
+      margin-top: 2em;
+      &--element {
+        border-radius: 10px;
+        width: 100%;
+      }
+    }
   }
   &__product_info_container {
     padding: 1.5em;
     position: absolute;
     top: 65vh;
+    @media all and(min-width:1200px) {
+      width: 60%;
+      position: static;
+      padding: 5em;
+    }
   }
   &__subtitle {
     text-transform: uppercase;
@@ -46,6 +77,9 @@ $light-grayish-blue: hsl(223, 64%, 98%);
     font-weight: 700;
     font-size: 1.7em;
     line-height: 1.2em;
+    @media all and(min-width:1200px) {
+      font-size: 2em;
+    }
   }
   &__text {
     font-weight: 400;
@@ -79,6 +113,15 @@ $light-grayish-blue: hsl(223, 64%, 98%);
       font-weight: 700;
       text-decoration: line-through;
     }
+    @media all and(min-width:1200px) {
+      display: inline-block;
+    }
+  }
+  .counter_button_container {
+    @media all and(min-width:1200px) {
+      display: flex;
+      align-items: center;
+    }
   }
   .counter {
     display: flex;
@@ -95,9 +138,16 @@ $light-grayish-blue: hsl(223, 64%, 98%);
       background-color: $light-grayish-blue;
       font-weight: 700;
       font-size: 1.2em;
+      @media all and(min-width:1200px) {
+        width: 50%;
+        padding-left: 15%;
+      }
     }
     img {
       padding: 5%;
+    }
+    @media all and(min-width:1200px) {
+      width: 40%;
     }
   }
   &__button {
@@ -107,5 +157,14 @@ $light-grayish-blue: hsl(223, 64%, 98%);
       filter: brightness(100);
       padding: 0 2%;
     }
+    @media all and(min-width:1200px) {
+      width: 80%;
+      margin-left: 5%;
+    }
+  }
+  @media all and(min-width:1200px) {
+    display: flex;
+    align-items: center;
+    padding: 2% 15%;
   }
 }

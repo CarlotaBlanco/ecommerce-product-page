@@ -9,6 +9,28 @@
       </div>
     </div>
     <img class="js-image-product main__image_product" src="" alt="" />
+    <div class="main__image_thumbnails">
+      <img
+        class="main__image_thumbnails--element"
+        src="./assets/images/image-product-1-thumbnail.jpg"
+        alt="Product 1"
+      />
+      <img
+        class="main__image_thumbnails--element"
+        src="./assets/images/image-product-2-thumbnail.jpg"
+        alt="Product 2"
+      />
+      <img
+        class="main__image_thumbnails--element"
+        src="./assets/images/image-product-3-thumbnail.jpg"
+        alt="Product 3"
+      />
+      <img
+        class="main__image_thumbnails--element"
+        src="./assets/images/image-product-4-thumbnail.jpg"
+        alt="Product 4"
+      />
+    </div>
   </div>
   <div class="main__product_info_container">
     <h6 class="main__subtitle">Sneaker company</h6>
@@ -25,24 +47,26 @@
       </div>
       <p class="prices__right">$250.00</p>
     </div>
-    <div class="counter">
-      <img
-        class="js-remove"
-        src="./assets/images/icon-minus.svg"
-        alt="Remove"
-      />
-      <input
-        class="counter__input js-quantity"
-        type="number"
-        name="quantity"
-        id="quantity"
-        value="0"
-        readonly
-      />
-      <img class="js-add" src="./assets/images/icon-plus.svg" alt="Add" />
+    <div class="counter_button_container">
+      <div class="counter">
+        <img
+          class="js-remove"
+          src="./assets/images/icon-minus.svg"
+          alt="Remove"
+        />
+        <input
+          class="counter__input js-quantity"
+          type="number"
+          name="quantity"
+          id="quantity"
+          value="0"
+          readonly
+        />
+        <img class="js-add" src="./assets/images/icon-plus.svg" alt="Add" />
+      </div>
+      <button class="main__button js-add-cart-button">
+        <img src="./assets/images/icon-cart.svg" alt="Cart" /> Add to cart
+      </button>
     </div>
-    <button class="main__button js-add-cart-button">
-      <img src="./assets/images/icon-cart.svg" alt="Cart" /> Add to cart
-    </button>
   </div>
 </main>

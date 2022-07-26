@@ -1,12 +1,14 @@
 <header class="header">
   <div class="header__left-elements">
-    <img
-      class="js-hamburger-menu header__left-elements--hamburger"
-      src="./assets/images/icon-menu.svg"
-      alt="Menu"
-    />
-    <div class="js-hamburger-menu-container collapse hamburger-menu-container">
-      <nav>
+    <div>
+      <img
+        class="js-hamburger-menu header__left-elements--hamburger"
+        src="./assets/images/icon-menu.svg"
+        alt="Menu"
+      />
+      <nav
+        class="js-hamburger-menu-container collapse hamburger-menu-container"
+      >
         <img
           class="js-close-menu"
           src="./assets/images/icon-close.svg"
@@ -23,6 +25,15 @@
     </div>
     <div class="js-opacity"></div>
     <img class="" src="./assets/images/logo.svg" alt="Sneakers Logo" />
+    <nav class="menu-desktop-container">
+      <ul class="menu-desktop">
+        <li class="menu-desktop__item">Collections</li>
+        <li class="menu-desktop__item">Men</li>
+        <li class="menu-desktop__item">Women</li>
+        <li class="menu-desktop__item">About</li>
+        <li class="menu-desktop__item">Contact</li>
+      </ul>
+    </nav>
   </div>
   <div class="header__right-elements">
     <div class="js-cart-quantity"></div>
@@ -37,5 +48,6 @@
       alt="Avatar"
     />
   </div>
+
   <include src="./cart.html"></include>
 </header>
