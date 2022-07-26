@@ -3,20 +3,17 @@
 const hamburgerMenubutton = document.querySelector('.js-hamburger-menu');
 const hamburgerMenu = document.querySelector('.js-hamburger-menu-container');
 const closeMenu = document.querySelector('.js-close-menu');
-
 const imageProduct = document.querySelector('.js-image-product');
 const nextButton = document.querySelector('.js-next-button');
 const prevButton = document.querySelector('.js-prev-button');
+const changeThumb = document.querySelector('.js-change-img');
 
 const addProduct = document.querySelector('.js-add');
 const removeProduct = document.querySelector('.js-remove');
-
 const addCartButton = document.querySelector('.js-add-cart-button');
 const cartQuantity = document.querySelector('.js-cart-quantity');
-
 const cart = document.querySelector('.js-cart');
 const cartButton = document.querySelector('.js-cart-button');
-
 const product = document.querySelector('.js-product');
 
 const opacity = document.querySelector('.js-opacity');
@@ -63,6 +60,11 @@ function prevSlideShow() {
 function renderImg() {
   imageProduct.src = images[currentImg].url;
   imageProduct.alt = images[currentImg].alt;
+}
+
+function changeByThumb(event) {
+  currentImg = parseInt(event.target.id);
+  renderImg();
 }
 
 function addProductCart() {
@@ -138,3 +140,4 @@ addProduct.addEventListener('click', addProductCart);
 removeProduct.addEventListener('click', removeProductCart);
 addCartButton.addEventListener('click', cartTag);
 cartButton.addEventListener('click', renderCart);
+changeThumb.addEventListener('click', changeByThumb);
