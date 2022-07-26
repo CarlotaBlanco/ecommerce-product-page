@@ -1,0 +1,13 @@
+@mixin button {
+  width: 90%;
+  background-color: $orange;
+  color: $white;
+  border: none;
+  height: 3.5em;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.2em;
+  &:hover {
+    box-shadow: -15px 16px 41px -12px $orange;
+  }
+}

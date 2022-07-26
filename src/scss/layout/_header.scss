@@ -48,7 +48,7 @@ $orange: hsl(26, 100%, 55%);
       font-size: 0.7em;
       border-radius: 10px;
       position: absolute;
-      z-index: 99;
+      z-index: 2;
       top: 3vh;
       right: 13vw;
     }
@@ -74,5 +74,5 @@ $orange: hsl(26, 100%, 55%);
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 4;
 }

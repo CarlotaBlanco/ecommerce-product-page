@@ -12,7 +12,7 @@ $light-grayish-blue: hsl(223, 64%, 98%);
     justify-content: space-between;
     position: absolute;
     top: 30%;
-    z-index: 99;
+    z-index: 3;
     padding: 1em;
     &--button {
       width: 3em;
@@ -101,20 +101,11 @@ $light-grayish-blue: hsl(223, 64%, 98%);
     }
   }
   &__button {
+    @include button;
     width: 100%;
-    background-color: $orange;
-    color: $white;
-    border: none;
-    height: 3.5em;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 1.2em;
     img {
       filter: brightness(100);
       padding: 0 2%;
     }
-  }
-  &__button:hover {
-    box-shadow: -15px 16px 41px -12px $orange;
   }
 }

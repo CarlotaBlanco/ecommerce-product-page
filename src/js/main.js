@@ -12,7 +12,12 @@ const addProduct = document.querySelector('.js-add');
 const removeProduct = document.querySelector('.js-remove');
 
 const addCartButton = document.querySelector('.js-add-cart-button');
-const cardQuantity = document.querySelector('.js-cart-quantity');
+const cartQuantity = document.querySelector('.js-cart-quantity');
+
+const cart = document.querySelector('.js-cart');
+const cartButton = document.querySelector('.js-cart-button');
+
+const product = document.querySelector('.js-product');
 
 const opacity = document.querySelector('.js-opacity');
 let currentImg = 0;
@@ -25,12 +30,12 @@ const images = [
 
 let quantity = 0;
 
-function handleCollapseHamburgerMenu() {
+function collapseHamburgerMenu() {
   hamburgerMenu.classList.remove('collapse');
   opacity.classList.add('opacity');
 }
 
-function handleCloseHamburgerMenu() {
+function closeHamburgerMenu() {
   hamburgerMenu.classList.add('collapse');
   opacity.classList.remove('opacity');
 }
@@ -62,10 +67,10 @@ function renderImg() {
 
 function addProductCart() {
   quantity++;
-  renderCart();
+  renderQuantity();
 }
 
-function renderCart() {
+function renderQuantity() {
   document.querySelector('.js-quantity').value = quantity;
 }
 
@@ -73,22 +78,63 @@ function removeProductCart() {
   if (quantity > 0) {
     quantity--;
   }
-  renderCart();
+  renderQuantity();
 }
-function submitToCart() {
+
+function cartTag() {
   if (quantity > 0) {
-    cardQuantity.classList.add('header__right-elements--quantity');
-    cardQuantity.innerHTML = quantity;
-  } else {
-    alert('Error! Empty Cart!');
+    cartQuantity.classList.add('header__right-elements--quantity');
+    cartQuantity.innerHTML = quantity;
+    renderCart();
   }
 }
+
+function renderCart() {
+  cart.classList.toggle('collapse');
+  if (quantity > 0) {
+    let html = '';
+    html += `<div class="cart__product js-product">`;
+    html += ` <img
+    class="cart__product--img"
+    src="./assets/images/image-product-1-thumbnail.jpg"
+    alt="Product"
+  />`;
+    html += `<p class="cart__product--text">
+    Autumn Limited Edition… $125.00 x
+    <span>${quantity}</span>
+    <span class="total-checkout"> $${quantity * 125}.00</span>
+  </p>`;
+    html += `<img class="js-clear" src="./assets/images/icon-delete.svg" alt="Delete" />`;
+    html += `</div>`;
+    html += `<button class="cart__checkout">Checkout</button>`;
+    product.innerHTML = html;
+    addEventClear();
+  } else {
+    product.innerHTML = `<div class="cart__product js-product">Your cart is empty</div>`;
+  }
+}
+
+function addEventClear() {
+  const cartClear = document.querySelector('.js-clear');
+  cartClear.addEventListener('click', clearCart);
+}
+
+function clearCart() {
+  quantity = 0;
+  cartQuantity.classList.remove('header__right-elements--quantity');
+  cartQuantity.innerHTML = '';
+  cart.classList.toggle('collapse');
+  renderQuantity();
+  renderCart();
+}
+
 renderImg();
 
-hamburgerMenubutton.addEventListener('click', handleCollapseHamburgerMenu);
-closeMenu.addEventListener('click', handleCloseHamburgerMenu);
+hamburgerMenubutton.addEventListener('click', collapseHamburgerMenu);
+closeMenu.addEventListener('click', closeHamburgerMenu);
 nextButton.addEventListener('click', nextSlideShow);
 prevButton.addEventListener('click', prevSlideShow);
 addProduct.addEventListener('click', addProductCart);
 removeProduct.addEventListener('click', removeProductCart);
-addCartButton.addEventListener('click', submitToCart);
+addCartButton.addEventListener('click', cartTag);
+cartButton.addEventListener('click', renderCart);
