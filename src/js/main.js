@@ -9,6 +9,13 @@ const addProduct = document.querySelector('.js-add');
 const removeProduct = document.querySelector('.js-remove');
 const addCartButton = document.querySelector('.js-add-cart-button');
 const cartButton = document.querySelector('.js-cart-button');
+const imageProduct = document.querySelector('.js-image-product');
+const closeLightbox = document.querySelector('.js-close-lightbox');
+const lightboxPrevButton = document.querySelector('.js-lightbox-prev-button');
+const lightboxNextButton = document.querySelector('.js-lightbox-next-button');
+const lightboxImage = document.querySelector('.js-lightbox__image');
+const changeThumbLightbox = document.querySelector('.js-lightbox-thumbnails');
+
 let quantity = 0;
 let currentImg = 0;
 const images = [
@@ -18,19 +25,21 @@ const images = [
   { url: './assets/images/image-product-4.jpg', alt: 'Product 4' },
 ];
 
-function collapseHamburgerMenu() {
+function hideHamburgerMenu() {
   const opacity = document.querySelector('.js-opacity');
   const hamburgerMenu = document.querySelector('.js-hamburger-menu-container');
-  hamburgerMenu.classList.remove('collapse');
+  hamburgerMenu.classList.remove('hide');
   opacity.classList.add('opacity');
 }
 
 function closeHamburgerMenu() {
   const opacity = document.querySelector('.js-opacity');
   const hamburgerMenu = document.querySelector('.js-hamburger-menu-container');
-  hamburgerMenu.classList.add('collapse');
+  hamburgerMenu.classList.add('hide');
   opacity.classList.remove('opacity');
 }
+
+//Mobile and desktop Galleries
 
 function nextSlideShow() {
   if (currentImg < images.length - 1) {
@@ -53,10 +62,13 @@ function prevSlideShow() {
 }
 
 function renderImg() {
-  const imageProduct = document.querySelector('.js-image-product');
   const thumbElement = document.querySelectorAll('.js-thumb-element');
+
   imageProduct.src = images[currentImg].url;
   imageProduct.alt = images[currentImg].alt;
+  lightboxImage.src = imageProduct.src;
+  lightboxImage.alt = imageProduct.alt;
+
   for (let element of thumbElement) {
     if (parseInt(element.id) === currentImg) {
       element.classList.add('main__image_thumbnails--element_active');
@@ -70,6 +82,8 @@ function changeByThumb(event) {
   currentImg = parseInt(event.target.id);
   renderImg();
 }
+
+renderImg();
 
 function addProductCart() {
   quantity++;
@@ -99,7 +113,7 @@ function cartTag() {
 function renderCart() {
   const product = document.querySelector('.js-product');
   const cart = document.querySelector('.js-cart');
-  cart.classList.toggle('collapse');
+  cart.classList.toggle('hide');
   if (quantity > 0) {
     let html = '';
     html += `<div class="cart__product js-product">`;
@@ -134,14 +148,24 @@ function clearCart() {
   quantity = 0;
   cartQuantity.classList.remove('header__right-elements--quantity');
   cartQuantity.innerHTML = '';
-  cart.classList.toggle('collapse');
+  cart.classList.toggle('hide');
   renderQuantity();
   renderCart();
 }
 
-renderImg();
+//Lightbox Gallery
 
-hamburgerMenubutton.addEventListener('click', collapseHamburgerMenu);
+function openGallery() {
+  const lightbox = document.querySelector('.js-lightbox');
+  lightbox.classList.remove('hide');
+}
+
+function closeGallery() {
+  const lightbox = document.querySelector('.js-lightbox');
+  lightbox.classList.add('hide');
+}
+
+hamburgerMenubutton.addEventListener('click', hideHamburgerMenu);
 closeMenu.addEventListener('click', closeHamburgerMenu);
 nextButton.addEventListener('click', nextSlideShow);
 prevButton.addEventListener('click', prevSlideShow);
@@ -150,3 +174,8 @@ removeProduct.addEventListener('click', removeProductCart);
 addCartButton.addEventListener('click', cartTag);
 cartButton.addEventListener('click', renderCart);
 changeThumb.addEventListener('click', changeByThumb);
+imageProduct.addEventListener('click', openGallery);
+closeLightbox.addEventListener('click', closeGallery);
+lightboxPrevButton.addEventListener('click', prevSlideShow);
+lightboxNextButton.addEventListener('click', nextSlideShow);
+changeThumbLightbox.addEventListener('click', changeByThumb);

@@ -109,7 +109,7 @@ $grayish-blue: hsl(220, 14%, 75%);
   }
 }
 
-.collapse {
+.hide {
   display: none;
 }
 
@@ -120,5 +120,5 @@ $grayish-blue: hsl(220, 14%, 75%);
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 4;
+  z-index: 10;
 }
