@@ -19,7 +19,7 @@ $grayish-blue: hsl(220, 14%, 75%);
     &--hamburger {
       width: 16px;
       height: 16px;
-      @media all and(min-width:1200px) {
+      @media all and(min-width:1024px) {
         display: none;
       }
     }
@@ -40,13 +40,13 @@ $grayish-blue: hsl(220, 14%, 75%);
           font-weight: 700;
         }
       }
-      @media all and(min-width:1200px) {
+      @media all and(min-width:1024px) {
         display: none;
       }
     }
     .menu-desktop-container {
       display: none;
-      @media all and(min-width:1200px) {
+      @media all and(min-width:1024px) {
         display: inline-block;
         width: 60%;
         .menu-desktop {
@@ -59,10 +59,10 @@ $grayish-blue: hsl(220, 14%, 75%);
         }
       }
     }
-    @media all and(min-width:768px) {
+    @media all and(min-width:540px) {
       width: 25%;
     }
-    @media all and(min-width:1200px) {
+    @media all and(min-width:1024px) {
       justify-content: flex-start;
       width: 70%;
     }
@@ -94,16 +94,16 @@ $grayish-blue: hsl(220, 14%, 75%);
     &--avatar {
       width: 22px;
       height: 22px;
-      @media all and(min-width:1200px) {
+      @media all and(min-width:1024px) {
         width: 42px;
         height: 42px;
       }
     }
-    @media all and(min-width:768px) {
+    @media all and(min-width:540px) {
       width: 12%;
     }
   }
-  @media all and(min-width:1200px) {
+  @media all and(min-width:1024px) {
     margin: 0 10%;
     padding: 0;
     border-bottom: 0.5px solid $grayish-blue;

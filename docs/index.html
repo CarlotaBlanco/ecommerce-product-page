@@ -3,64 +3,201 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Adalab Web Starter Kit</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <title>E-commerce product page challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="icon" href="./assets/images/favicon.png" />
+    <link rel="icon" href="./assets/images/favicon-32x32.png" />
   </head>
 
   <body>
     <div class="page">
-      <header class="page__header">
-        <img src="./assets/images/logo-adalab.png" alt="Adalab">
-        <h1>Bienvenidos a Adalab</h1>
+      <header class="header">
+        <div class="header__left-elements">
+          <div>
+            <img
+              class="js-hamburger-menu header__left-elements--hamburger"
+              src="./assets/images/icon-menu.svg"
+              alt="Menu"
+            />
+            <nav class="js-hamburger-menu-container hide hamburger-menu-container">
+              <img
+                class="js-close-menu"
+                src="./assets/images/icon-close.svg"
+                alt="Close"
+              />
+              <ul class="hamburger-menu">
+                <li class="hamburger-menu__item">Collections</li>
+                <li class="hamburger-menu__item">Men</li>
+                <li class="hamburger-menu__item">Women</li>
+                <li class="hamburger-menu__item">About</li>
+                <li class="hamburger-menu__item">Contact</li>
+              </ul>
+            </nav>
+          </div>
+          <div class="js-opacity"></div>
+          <img class="" src="./assets/images/logo.svg" alt="Sneakers Logo" />
+          <nav class="menu-desktop-container">
+            <ul class="menu-desktop">
+              <li class="menu-desktop__item">Collections</li>
+              <li class="menu-desktop__item">Men</li>
+              <li class="menu-desktop__item">Women</li>
+              <li class="menu-desktop__item">About</li>
+              <li class="menu-desktop__item">Contact</li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__right-elements">
+          <div class="cart_and_quantity">
+            <div class="js-cart-quantity"></div>
+            <img
+              class="header__right-elements--cart js-cart-button"
+              src="./assets/images/icon-cart.svg"
+              alt="Cart"
+            />
+          </div>
+          <img
+            class="header__right-elements--avatar"
+            src="./assets/images/image-avatar.png"
+            alt="Avatar"
+          />
+        </div>
+
+        <section class="cart js-cart hide">
+          <h3 class="cart__title">Cart</h3>
+          <hr />
+          <div class="js-product"></div>
+        </section>
+
       </header>
 
-      <main class="page__main">
-        <h2>Este es el starter kit de Adalab</h2>
-        <p>Lo usamos para aprender:</p>
-        <ul class="main__list">
-          <li>Sass</li>
-          <li>HTML partials</li>
-          <li>Gulp</li>
-          <li>y muchas cosas más</li>
-        </ul>
-        <p>Si quieres saber cúales son las rutas correctas para:</p>
-        <ul class="main__list">
-          <li>
-            una <code class="code">&lt;img /&gt;</code> mira el fichero
-            <code class="code">./src/html/partials/header.html</code>.
-          </li>
-          <li>
-            y para un <code class="code">background-image</code> mira el fichero
-            <code class="code">./src/html/scss/layout/_page.scss</code>.
-          </li>
-        </ul>
-        <p>
-          Si quieres saber cómo usar un partial HTML dentro de otro partial, busca en la carperta
-          <code class="code">./src/html/index.html</code> y
-          <code class="code">./src/html/partials/main.html</code>, y verás cómo estamos creando estos
-          enlaces:
-        </p>
-        <ul class="main__list">
-          <li>
-            <a class="link__adalab" href="https://adalab.es">Adalab</a>
-
-          </li>
-          <li>
-            <a class="" href="./more-info.html">Más info del starter kit</a>
-
-          </li>
-        </ul>
+      <main class="main">
+        <div class="main__product_image_container">
+          <div class="main__image_controls">
+            <div class="js-prev-button main__image_controls--button">
+              <img src="./assets/images/icon-previous.svg" alt="Prev" />
+            </div>
+            <div class="js-next-button main__image_controls--button">
+              <img src="./assets/images/icon-next.svg" alt="Next" />
+            </div>
+          </div>
+          <img class="js-image-product main__image_product" src="" alt="" />
+          <div class="main__image_thumbnails js-change-img">
+            <img
+              class="main__image_thumbnails--element js-thumb-element"
+              src="./assets/images/image-product-1-thumbnail.jpg"
+              alt="Product 1"
+              id="0"
+            />
+            <img
+              class="main__image_thumbnails--element js-thumb-element"
+              src="./assets/images/image-product-2-thumbnail.jpg"
+              alt="Product 2"
+              id="1"
+            />
+            <img
+              class="main__image_thumbnails--element js-thumb-element"
+              src="./assets/images/image-product-3-thumbnail.jpg"
+              alt="Product 3"
+              id="2"
+            />
+            <img
+              class="main__image_thumbnails--element js-thumb-element"
+              src="./assets/images/image-product-4-thumbnail.jpg"
+              alt="Product 4"
+              id="3"
+            />
+          </div>
+        </div>
+        <div class="main__product_info_container">
+          <h6 class="main__subtitle">Sneaker company</h6>
+          <h2 class="main__title">Fall Limited Edition Sneakers</h2>
+          <p class="main__text">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they'll withstand everything the
+            weather can offer.
+          </p>
+          <div class="prices">
+            <div class="prices__left">
+              <h2 class="prices__left--now">$125.00</h2>
+              <p class="prices__left--discount">50%</p>
+            </div>
+            <p class="prices__right">$250.00</p>
+          </div>
+          <div class="counter_button_container">
+            <div class="counter">
+              <img
+                class="js-remove"
+                src="./assets/images/icon-minus.svg"
+                alt="Remove"
+              />
+              <input
+                class="counter__input js-quantity"
+                type="number"
+                name="quantity"
+                id="quantity"
+                value="0"
+                readonly
+              />
+              <img class="js-add" src="./assets/images/icon-plus.svg" alt="Add" />
+            </div>
+            <button class="main__button js-add-cart-button">
+              <img src="./assets/images/icon-cart.svg" alt="Cart" /> Add to cart
+            </button>
+          </div>
+        </div>
       </main>
 
-      <footer class="page__footer">
-        <small>
-          &copy; Todos los derechos reservados
-          <a class="link__adalab" href="https://adalab.es">Adalab</a>
-
-        </small>
-      </footer>
+      <div class="lightbox hide js-lightbox">
+        <div class="lightbox__gallery">
+          <div>
+            <img
+              class="lightbox__close js-close-lightbox"
+              src="./assets/images/icon-close.svg"
+              alt="Close"
+            />
+          </div>
+          <div class="lightbox__controls">
+            <div class="js-lightbox-prev-button lightbox__controls--button">
+              <img src="./assets/images/icon-previous.svg" alt="Prev" />
+            </div>
+            <div class="js-lightbox-next-button lightbox__controls--button">
+              <img src="./assets/images/icon-next.svg" alt="Next" />
+            </div>
+          </div>
+          <img class="js-lightbox__image lightbox__image" src="" alt="" />
+          <div class="lightbox__thumbnails js-lightbox-thumbnails">
+            <img
+              class="lightbox__thumbnails--element js-thumb-element"
+              src="./assets/images/image-product-1-thumbnail.jpg"
+              alt="Product 1"
+              id="0"
+            />
+            <img
+              class="lightbox__thumbnails--element js-thumb-element"
+              src="./assets/images/image-product-2-thumbnail.jpg"
+              alt="Product 2"
+              id="1"
+            />
+            <img
+              class="lightbox__thumbnails--element js-thumb-element"
+              src="./assets/images/image-product-3-thumbnail.jpg"
+              alt="Product 3"
+              id="2"
+            />
+            <img
+              class="lightbox__thumbnails--element js-thumb-element"
+              src="./assets/images/image-product-4-thumbnail.jpg"
+              alt="Product 4"
+              id="3"
+            />
+          </div>
+        </div>
+      </div>
 
     </div>
     <script src="./assets/js/main.js"></script>

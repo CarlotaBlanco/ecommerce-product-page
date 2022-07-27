@@ -1,7 +1,7 @@
 $black-opacity: hsla(0, 0%, 0%, 0.75);
 
 .lightbox {
-  @media all and(min-width:1200px) {
+  @media all and(min-width:1024px) {
     background-color: $black-opacity;
     width: 100vw;
     height: 100vh;
