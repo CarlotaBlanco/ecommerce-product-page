@@ -28,9 +28,12 @@ $light-grayish-blue: hsl(223, 64%, 98%);
       display: flex;
       align-items: center;
       justify-content: center;
-      @media all and(min-width:1200px) {
-        display: none;
-      }
+    }
+    @media all and(min-width:768px) {
+      top: 40%;
+    }
+    @media all and(min-width:1200px) {
+      display: none;
     }
   }
   &__image_product {
@@ -65,6 +68,9 @@ $light-grayish-blue: hsl(223, 64%, 98%);
     padding: 1.5em;
     position: absolute;
     top: 65vh;
+    @media all and(min-width:768px) {
+      top: 85vh;
+    }
     @media all and(min-width:1200px) {
       width: 60%;
       position: static;
