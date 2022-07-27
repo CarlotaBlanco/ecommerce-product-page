@@ -71,7 +71,7 @@ function renderImg() {
   lightboxImage.alt = imageProduct.alt;
 
   for (let element of thumbElement) {
-    if (parseInt(element.id) === currentImg) {
+    if (parseInt(element.dataset.id) === currentImg) {
       element.classList.add('main__image_thumbnails--element_active');
     } else {
       element.classList.remove('main__image_thumbnails--element_active');
@@ -80,7 +80,7 @@ function renderImg() {
 }
 
 function changeByThumb(event) {
-  currentImg = parseInt(event.target.id);
+  currentImg = parseInt(event.target.dataset.id);
   renderImg();
 }
 
