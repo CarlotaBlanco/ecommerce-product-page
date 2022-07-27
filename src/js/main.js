@@ -24,8 +24,9 @@ const images = [
   { url: './assets/images/image-product-3.jpg', alt: 'Product 3' },
   { url: './assets/images/image-product-4.jpg', alt: 'Product 4' },
 ];
+//Hamburger Menu
 
-function hideHamburgerMenu() {
+function openHamburgerMenu() {
   const opacity = document.querySelector('.js-opacity');
   const hamburgerMenu = document.querySelector('.js-hamburger-menu-container');
   hamburgerMenu.classList.remove('hide');
@@ -85,6 +86,8 @@ function changeByThumb(event) {
 
 renderImg();
 
+//Cart
+
 function addProductCart() {
   quantity++;
   renderQuantity();
@@ -110,10 +113,15 @@ function cartTag() {
   }
 }
 
-function renderCart() {
-  const product = document.querySelector('.js-product');
+function openCart() {
   const cart = document.querySelector('.js-cart');
   cart.classList.toggle('hide');
+  renderCart();
+}
+
+function renderCart() {
+  const product = document.querySelector('.js-product');
+
   if (quantity > 0) {
     let html = '';
     html += `<div class="cart__product js-product">`;
@@ -143,12 +151,10 @@ function addEventClear() {
 }
 
 function clearCart() {
-  const cart = document.querySelector('.js-cart');
   const cartQuantity = document.querySelector('.js-cart-quantity');
   quantity = 0;
   cartQuantity.classList.remove('header__right-elements--quantity');
   cartQuantity.innerHTML = '';
-  cart.classList.toggle('hide');
   renderQuantity();
   renderCart();
 }
@@ -165,14 +171,14 @@ function closeGallery() {
   lightbox.classList.add('hide');
 }
 
-hamburgerMenubutton.addEventListener('click', hideHamburgerMenu);
+hamburgerMenubutton.addEventListener('click', openHamburgerMenu);
 closeMenu.addEventListener('click', closeHamburgerMenu);
 nextButton.addEventListener('click', nextSlideShow);
 prevButton.addEventListener('click', prevSlideShow);
 addProduct.addEventListener('click', addProductCart);
 removeProduct.addEventListener('click', removeProductCart);
 addCartButton.addEventListener('click', cartTag);
-cartButton.addEventListener('click', renderCart);
+cartButton.addEventListener('click', openCart);
 changeThumb.addEventListener('click', changeByThumb);
 imageProduct.addEventListener('click', openGallery);
 closeLightbox.addEventListener('click', closeGallery);
